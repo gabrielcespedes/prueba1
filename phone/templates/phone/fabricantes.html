@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fabricantes</title>
+</head>
+<body>
+<h1>Fabricantes de Smartphones</h1>
+<ul>
+    {% for fabricante in fabricantes %}
+    <li>{{ fabricante.nombre }}</li>
+    <table>
+        {% for smartphone in fabricante.smartphone_set.all %}
+        <tr>
+            <th>{{ smartphone.nombre }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endfor %}
+</ul>
+</body>
+</html>

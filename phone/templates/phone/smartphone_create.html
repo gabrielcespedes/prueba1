@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creación de Smartphone</title>
+</head>
+<body>
+<h1>Creación de smartphone</h1>
+<form action = "{% url 'smartphone_create' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Crear">
+</body>
+</html>
