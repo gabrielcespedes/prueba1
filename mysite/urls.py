@@ -18,7 +18,10 @@ from django.urls import path
 
 from django.urls import include
 
+from django.config import settings
+from django.config.urls.static import static
+
 urlpatterns = [
     path('', include('phone.urls')),
     path('admin/', admin.site.urls),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
