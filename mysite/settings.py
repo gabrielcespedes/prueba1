@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'a(9^%(&qlln*#8ih!h62fdj*5-yxsf
 #DEBUG = True
 #nuevo
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gabrielmatematica.herokuapp.com']
 
 
 # Application definition
