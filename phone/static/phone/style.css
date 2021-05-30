@@ -21,3 +21,8 @@ th {
 td {
     color: darkblue;
 }
+
+a {
+    text-decoration: none;
+    color: darkblue;
+}
