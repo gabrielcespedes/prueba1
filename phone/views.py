@@ -5,6 +5,9 @@ from .models import Fabricante
 from .forms import SmartphoneForm
 from .forms import FabricanteForm
 
+from .forms import UserRegisterForm
+from django.contrib import messages
+
 # Create your views here.
 
 def fabricantes_index(request):
@@ -36,3 +39,17 @@ def fabricante_create(request):
 
     return render(request, 'phone/fabricante_create.html', context)
 
+def register(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data['username']
+            messages.success(request, f'Usuario {username} creado.')
+            return redirect('fabricantes')
+    else:
+        form = UserRegisterForm()
+
+    context = {'form': form}
+
+    return(render(request, 'phone/register.html', context))

@@ -32,3 +32,15 @@ pre {
    font-family: none;
    font-size: 15px;
 }
+
+div {
+    background-color: lightgreen;
+}
+
+.menu {
+    display: inline;
+}
+
+nav {
+    float: right;
+}

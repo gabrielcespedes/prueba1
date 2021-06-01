@@ -8,6 +8,25 @@
     <title>Fabricantes</title>
 </head>
 <body>
+{% if messages %}
+    {% for message in messages %}
+    <div>
+        {{message}}
+    </div>
+    {% endfor %}
+{% endif %}
+<header>
+    <nav>
+        <ul class="menu">
+            {% if request.user.is_authenticated %}
+            <li class="menu"><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li class="menu"><a href="{% url 'register' %}">Register</a> </li>
+            <li class="menu"><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
 <h1>Fabricantes de Smartphones</h1>
 <ul>
     {% for fabricante in fabricantes %}
